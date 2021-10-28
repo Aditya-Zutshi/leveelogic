@@ -38,9 +38,15 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHBG1RyGSYpnkldV-wMc7JlyBJmWNVg7I"></script>
 
   <!-- FIREBASE CONFIGURATION -->
-  <script src="./firebase_config.js"></script>
-  <script type="module">
-    import {firebaseConfig } from './firebase_config.js';    
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyB5dJXKq33YcJsmh7LAcBpFPgr7eSDtVvs",
+      authDomain: "leveelogic-1ce15.firebaseapp.com",
+      projectId: "leveelogic-1ce15",
+      storageBucket: "leveelogic-1ce15.appspot.com",
+      messagingSenderId: "399942395743",
+      appId: "1:399942395743:web:3f6c1531ab6b4a196bf8ea"
+    };    
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
   </script>
