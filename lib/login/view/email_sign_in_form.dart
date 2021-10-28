@@ -127,11 +127,18 @@ class _PasswordInput extends StatelessWidget {
                 context.read<LoginCubit>().passwordChanged(password),
             obscureText: true,
             decoration: InputDecoration(
+              errorStyle: const TextStyle(
+                color: Colors.white,
+                fontSize: 13,
+              ),
               filled: true,
               fillColor: Colors.white70,
               labelText: 'password',
+              errorMaxLines: 3,
               helperText: '',
-              errorText: state.password.invalid ? 'invalid password' : null,
+              errorText: state.password.invalid
+                  ? 'invalid password\nminimum 8 characters including uppercase,\nlowercase, digit and a special sign'
+                  : null,
             ),
           ),
         );
