@@ -16,5 +16,4 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_LEVEELOGIC_1CE15 }}'
-          channelId: live
           projectId: leveelogic-1ce15
