@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:geotechnics_database/geotechnics_repository.dart';
 import 'package:geotechnics_database/models/models.dart';
@@ -85,13 +84,9 @@ void main() {
 
     test('deleteAllProjectsFromUser should clear the Project store', () async {
       SembastRepository repository = SembastRepository();
-      String projectId =
-          await repository.addProject(fakeUserId, Project.emptyProject);
       await repository.deleteAllProjectsFromUser(fakeUserId);
       List<Project> projects = await repository.projects(fakeUserId);
       expect(projects.length, 0);
-
-      //TODO should also cleanup cpts owned by the user!
     });
 
     test('addProject should add Project to the database', () async {

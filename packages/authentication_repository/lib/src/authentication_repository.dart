@@ -310,11 +310,15 @@ class AuthenticationRepository {
     try {
       await Future.wait([
         _firebaseAuth.signOut(),
-        _googleSignIn.signOut(),
       ]);
-    } catch (_) {
+    } catch (e) {
       throw LogOutFailure();
     }
+
+    //TODO signout seems to raise an exception
+    try {
+      await Future.wait([_googleSignIn.signOut()]);
+    } catch (_) {}
   }
 }
 

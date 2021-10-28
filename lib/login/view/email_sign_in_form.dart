@@ -34,7 +34,7 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
               ),
             );
         } else if (state.status.isSubmissionSuccess) {
-          context.replaceRoute(const ProjectsRoute());
+          AutoRouter.of(context).replaceAll([const ProjectsRoute()]);
         }
       },
       child: Container(

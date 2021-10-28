@@ -11,7 +11,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('LeveeLogic'),
         elevation: 2.0,
       ),
       body: BlocProvider(

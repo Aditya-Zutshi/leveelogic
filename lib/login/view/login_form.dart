@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:leveelogic/login/cubit/login_cubit.dart';
 import 'package:leveelogic/login/widgets/sign_in_button.dart';
-import 'package:leveelogic/login/widgets/social_sign_in_button.dart';
 import 'package:formz/formz.dart';
 import 'package:leveelogic/router/approuter.gr.dart';
 
@@ -23,7 +22,7 @@ class LoginForm extends StatelessWidget {
               ),
             );
         } else if (state.status.isSubmissionSuccess) {
-          context.replaceRoute(const ProjectsRoute());
+          AutoRouter.of(context).replaceAll([const ProjectsRoute()]);
         }
       },
       child: Container(
@@ -48,15 +47,16 @@ class LoginForm extends StatelessWidget {
                   onPressed: () =>
                       AutoRouter.of(context).navigate(const EmailSignInRoute()),
                 ),
-                const SizedBox(height: 8.0),
-                SocialSignInButton(
-                  assetName: 'img/google-logo.png',
-                  text: 'Sign in with Google',
-                  textColor: Colors.black87,
-                  color: Colors.white,
-                  onPressed: () => context.read<LoginCubit>().logInWithGoogle(),
-                ),
-                const SizedBox(height: 8.0),
+                // const SizedBox(height: 8.0),
+                // SocialSignInButton(
+                //   assetName: 'img/google-logo.png',
+                //   text: 'Sign in with Google',
+                //   textColor: Colors.black87,
+                //   color: Colors.white,
+                //   onPressed: () => context.read<LoginCubit>().logInWithGoogle(),
+                // ),
+                // const SizedBox(height: 8.0),
+                // TODO implement Google Login
                 const Text(
                   'or',
                   style: TextStyle(
